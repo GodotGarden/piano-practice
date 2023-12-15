@@ -36,7 +36,7 @@ This piano practice game is designed to help players improve their piano techniq
 
 ## Technical Aspects
 
-- **Programming and Game Engine**: To be decided based on the requirements.
+- **Programming and Game Engine**: Godot Engine 4.x
 - **Music Theory Accuracy**: Ensures exercises are theoretically sound.
 - **Testing**: Regular usability and educational effectiveness testing.
 
