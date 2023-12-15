@@ -14,10 +14,13 @@ func _ready():
 	piano_keys = _generate_piano_keys("C", 3, 3)  # Example usage
 	_render_piano_keyboard()
 
-	# Debug print to verify
-	for key in piano_keys:
-		print(key)
+	# Initialize MIDI input
+	OS.open_midi_inputs()
+	print(OS.get_connected_midi_inputs())
 
+func _input(input_event):
+	if input_event is InputEventMIDI:
+		_print_midi_info(input_event)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -63,3 +66,13 @@ func _render_piano_keyboard():
 		var key_x_position = i * (key_width + gap)
 		key_node.position = Vector2(key_x_position, screen_rect.size.y - key_height)
 
+func _print_midi_info(midi_event: InputEventMIDI):
+	print(midi_event)
+	print("Channel " + str(midi_event.channel))
+	print("Message " + str(midi_event.message))
+	print("Pitch " + str(midi_event.pitch))
+	print("Velocity " + str(midi_event.velocity))
+	print("Instrument " + str(midi_event.instrument))
+	print("Pressure " + str(midi_event.pressure))
+	print("Controller number: " + str(midi_event.controller_number))
+	print("Controller value: " + str(midi_event.controller_value))
