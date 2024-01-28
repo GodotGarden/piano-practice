@@ -1,8 +1,8 @@
 extends Node
 
 # Signal declarations
-signal midi_note_on(note, velocity)
-signal midi_note_off(note, velocity)
+signal midi_note_on(midi_note)
+signal midi_note_off(midi_note)
 
 # Constants for MIDI messages
 const NOTE_ON_MESSAGE = 9
@@ -16,15 +16,15 @@ func _init():
 
 func process_midi_input(input_event):
 	if input_event is InputEventMIDI:
-		_print_midi_info(input_event)
+		#_print_midi_info(input_event)
 		var midi_message = input_event.message  # Extract the message type
 		var midi_note = input_event.pitch  # MIDI note number
 		var midi_velocity = input_event.velocity  # Velocity (used to determine note-on/off)
 		
 		if midi_message == NOTE_ON_MESSAGE and midi_velocity > 0:
-			emit_signal("midi_note_on", midi_note, midi_velocity)
+			emit_signal("midi_note_on", midi_note)
 		elif midi_message == NOTE_OFF_MESSAGE or (midi_message == NOTE_ON_MESSAGE and midi_velocity == 0):
-			emit_signal("midi_note_off", midi_note, midi_velocity)
+			emit_signal("midi_note_off", midi_note)
 
 
 func _print_midi_info(midi_event: InputEventMIDI):

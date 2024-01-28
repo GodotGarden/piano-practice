@@ -18,26 +18,11 @@ var OCTAVE_SEMITONES = 12
 func _ready():
 	_generate_piano_keys("C", 2, 4)
 	_render_piano_keyboard()
+	
+	# Connect MIDIHandler signals to this scene's methods
+	MIDIHandler.connect("midi_note_on", self.handle_midi_note_on)
+	MIDIHandler.connect("midi_note_off", self.handle_midi_note_off)
 
-	# Initialize MIDI input
-	OS.open_midi_inputs()
-	print(OS.get_connected_midi_inputs())
-
-func _input(input_event):
-	if input_event is InputEventMIDI:
-		var midi_message = input_event.message  # Extract the message type
-		var midi_note = input_event.pitch  # MIDI note number
-		var midi_velocity = input_event.velocity  # Velocity (used to determine note-on/off)
-		
-		if midi_message == NOTE_ON_MESSAGE and midi_velocity > 0:  # Note-on with velocity > 0
-			_handle_midi_note_on(midi_note)
-		elif midi_message == NOTE_OFF_MESSAGE and midi_velocity > 0:  # Note-off or note-on with 0 velocity
-			_handle_midi_note_off(midi_note)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _generate_piano_keys(start_key: String, start_octave: int, num_octaves: int):
 	var notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
@@ -86,16 +71,16 @@ func midi_note_to_key_name(midi_note_number: int) -> String:
 	
 	return note_name
 
-func _handle_midi_note_on(midi_note):
+func handle_midi_note_on(midi_note):
 	var key_name = midi_note_to_key_name(midi_note)
-
+	print(key_name)
 	if key_name in key_nodes:
 		var key_node = key_nodes[key_name]
 
 		# Change key appearance
 		key_node.color = key_colors["pressed"]
 
-func _handle_midi_note_off(midi_note):
+func handle_midi_note_off(midi_note):
 	var key_name = midi_note_to_key_name(midi_note)
 	if key_name in key_nodes:
 		var key_node = key_nodes[key_name]
