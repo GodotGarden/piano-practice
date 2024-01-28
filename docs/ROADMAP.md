@@ -10,9 +10,17 @@
 
 ## Milestone 2: Prototype Development
 
+Core engine requirements:
+	- fully open source
+	- built in support for key functionality:
+		- MIDI input
+		- sound output (e.g. metronome)
+	- multi-platform build targets (mobile, desktop, web)
+
 **Goal**: Create a basic functional prototype of the game.
 
 - Select a programming language and game engine.
+	- Choice: Godot engine with GDScript
 - Develop a simple user interface with a piano keyboard display.
 - Implement basic key highlighting and finger number display.
 - Create a simple level with a single musical concept (e.g., playing fifths).

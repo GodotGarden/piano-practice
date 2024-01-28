@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccpa04uxa7e7r"]
+
+[ext_resource type="PackedScene" uid="uid://bkgwybsoq5dqr" path="res://scenes/PianoDisplay.tscn" id="1_1j2tv"]
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_2dlul"]
+[ext_resource type="PackedScene" uid="uid://od5mwlih5hjv" path="res://scenes/NoteDisplay.tscn" id="2_jsl3p"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2dlul")
+
+[node name="NoteDisplay" parent="." instance=ExtResource("2_jsl3p")]
+position = Vector2(540, 240)
+
+[node name="PianoDisplay" parent="." instance=ExtResource("1_1j2tv")]
