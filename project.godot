@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Piano-practice"
-run/main_scene="res://piano_display.tscn"
+run/main_scene="res://scenes/piano_display.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [rendering]
 
