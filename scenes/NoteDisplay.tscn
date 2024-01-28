@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://od5mwlih5hjv"]
+[gd_scene load_steps=3 format=3 uid="uid://od5mwlih5hjv"]
 
 [ext_resource type="Script" path="res://scenes/NoteDisplay.gd" id="1_nd7kv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3w1oi"]
+font_size = 24
 
 [node name="NoteDisplay" type="Node2D"]
 script = ExtResource("1_nd7kv")
@@ -8,3 +11,4 @@ script = ExtResource("1_nd7kv")
 [node name="NotesLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_3w1oi")
