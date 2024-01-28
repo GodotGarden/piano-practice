@@ -28,7 +28,6 @@
 - Real-time feedback based on user input.
 - Progressive difficulty adjustment based on user proficiency.
 
-
 ### Core learning goals
 
 Players should learn the spatial patterns of the piano such as scales, modes, chords, and chord inversions. They should also gain knowledge of the notes that comprise key signatures, scales, and chords. When successful, players should have a tacit knowledge and muscle memory of the previous concepts.
