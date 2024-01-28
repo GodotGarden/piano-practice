@@ -71,17 +71,18 @@ func midi_note_to_key_name(midi_note_number: int) -> String:
 	
 	return note_name
 
-func handle_midi_note_on(midi_note):
-	var key_name = midi_note_to_key_name(midi_note)
-	print(key_name)
+func handle_midi_note_on(midi_note_info: MIDIHandler.MIDINoteInfo):
+	var key_name = midi_note_to_key_name(midi_note_info.midi_number)
+
 	if key_name in key_nodes:
 		var key_node = key_nodes[key_name]
 
 		# Change key appearance
 		key_node.color = key_colors["pressed"]
 
-func handle_midi_note_off(midi_note):
-	var key_name = midi_note_to_key_name(midi_note)
+func handle_midi_note_off(midi_note_info: MIDIHandler.MIDINoteInfo):
+	var key_name = midi_note_to_key_name(midi_note_info.midi_number)
+
 	if key_name in key_nodes:
 		var key_node = key_nodes[key_name]
 		
