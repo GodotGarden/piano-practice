@@ -78,17 +78,6 @@ func _render_piano_keyboard():
 		# Store the reference to the key node
 		key_nodes[key["note_name"]] = key_node
 
-func _print_midi_info(midi_event: InputEventMIDI):
-	print(midi_event)
-	print("Channel " + str(midi_event.channel))
-	print("Message " + str(midi_event.message))
-	print("Pitch " + str(midi_event.pitch))
-	print("Velocity " + str(midi_event.velocity))
-	print("Instrument " + str(midi_event.instrument))
-	print("Pressure " + str(midi_event.pressure))
-	print("Controller number: " + str(midi_event.controller_number))
-	print("Controller value: " + str(midi_event.controller_value))
-
 func midi_note_to_key_name(midi_note_number: int) -> String:
 	var note_names = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 	var octave = (midi_note_number / OCTAVE_SEMITONES) - 1  # Calculate the octave

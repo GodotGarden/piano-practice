@@ -15,6 +15,10 @@ run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+MIDIHandler="*res://scripts/MIDIHandler.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
