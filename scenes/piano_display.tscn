@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkgwybsoq5dqr"]
-
-[ext_resource type="Script" path="res://scenes/PianoDisplay.gd" id="1_8fr2b"]
-
-[node name="PianoDisplay" type="Node2D"]
-script = ExtResource("1_8fr2b")
