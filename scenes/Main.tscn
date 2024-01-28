@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccpa04uxa7e7r"]
+
+[ext_resource type="PackedScene" uid="uid://bkgwybsoq5dqr" path="res://scenes/PianoDisplay.tscn" id="1_1j2tv"]
+
+[node name="Main" type="Node2D"]
+
+[node name="PianoDisplay" parent="." instance=ExtResource("1_1j2tv")]
