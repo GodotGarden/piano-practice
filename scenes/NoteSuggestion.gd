@@ -32,7 +32,6 @@ func _on_midi_note_on(note_info: MIDIHandler.MIDINoteInfo):
 		emit_signal("note_correct")
 		# Visual feedback for correct note
 		note_label.modulate = Color.GREEN
-		print("Correct note played!")
 		$DelayTimer.start()
 		await $DelayTimer.timeout
 		select_and_display_note()
@@ -40,4 +39,3 @@ func _on_midi_note_on(note_info: MIDIHandler.MIDINoteInfo):
 		emit_signal("note_incorrect")
 		# Visual feedback for incorrect note
 		note_label.modulate = Color.RED
-		print("Incorrect note played!")
