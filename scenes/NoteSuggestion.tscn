@@ -13,3 +13,5 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Text"
 label_settings = SubResource("LabelSettings_5j154")
+
+[node name="DelayTimer" type="Timer" parent="."]
