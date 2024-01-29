@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc4hbfyfa83oy"]
+
+[ext_resource type="Script" path="res://scenes/NoteSuggestion.gd" id="1_nfmut"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5j154"]
+font_size = 42
+
+[node name="NoteSuggestion" type="Node2D"]
+script = ExtResource("1_nfmut")
+
+[node name="NoteLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Text"
+label_settings = SubResource("LabelSettings_5j154")

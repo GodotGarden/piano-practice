@@ -1,5 +1,5 @@
 # NoteDisplay.gd
-extends Node
+extends Node2D
 
 var active_notes = []  # Array to store active notes
 var notes_label: Label
